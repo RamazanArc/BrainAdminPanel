@@ -13,22 +13,22 @@ const HomePage = () => {
     const verificationCode = document.getElementById("verification-code");
 
     console.log({ username, phoneNumber, verificationCode });
-    router.push("/dashboard");
+    router.push("/home");
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-500">
+    <div className="flex flex-col items-center justify-center min-h-screen  bg-white">
       {/* <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center "> */}
-      <div className="bg-white absolute rounded-2xl shadow-2xl flex w-2/3 max-w-4xl">
-        <div className="w-1/2 relative rounded-tr-2xl rounded-br-2xl">
+      <div className="bg-white absolute rounded-xl shadow-xl flex w-2/3 max-w-4xl">
+        <div className="w-1/2 relative rounded-tr-xl rounded-br-xl">
           <img
             src="/assets/bg1.jpg"
             alt="Sample image"
-            className=" w-full h-full object-top rounded-bl-2xl rounded-tl-2xl"
+            className=" w-full h-full object-top rounded-bl-xl rounded-tl-xl"
           />
         </div>
         <div className="w-1/2 py-36 px-12">
-          <div className=" items-center md:text-left">
+          <div className="md:text-left">
             <img
               src="/assets/brain.jpg"
               alt="brain-logo"
@@ -36,9 +36,7 @@ const HomePage = () => {
               height={200}
               className="m-auto mb-5"
             />
-            <label className="mr-1 font-bold text-3xl">
-              Brain Smart Panel Giriş
-            </label>
+            <label className="mr-1 font-bold text-3xl">Brain Smart</label>
           </div>
           <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300"></div>
           <form onSubmit={handleLogin}>
@@ -70,7 +68,7 @@ const HomePage = () => {
 
             <div className="text-center md:text-left">
               <button
-                className=" w-full mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
+                className=" w-full h-12 mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
                 type="submit"
               >
                 Giriş

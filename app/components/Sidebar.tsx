@@ -9,7 +9,6 @@ import {
 import { IoIosMenu } from "react-icons/io";
 import { IoHomeSharp, IoCall } from "react-icons/io5";
 import { MdLogout } from "react-icons/md";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaRankingStar, FaUsersBetweenLines } from "react-icons/fa6";
 import { BiSolidPhoneCall } from "react-icons/bi";
@@ -20,7 +19,6 @@ import Link from "next/link";
 
 const Dashboard = () => {
   const [active, setActive] = useState(true);
-  const router = useRouter();
 
   function toggleSidebar() {
     setActive(!active);
@@ -75,7 +73,7 @@ const Dashboard = () => {
 
             <Link
               className="flex w-full p-3 rounded-xl hover:bg-blue-400 hover:text-white "
-              href={"/product"}
+              href={"/products"}
             >
               <FaFilter className="h-6 w-6" />
               <span
@@ -148,7 +146,7 @@ const Dashboard = () => {
             </Link>
             <Link
               className="flex w-full p-3 rounded-xl hover:bg-blue-400 hover:text-white"
-              href={"/diskullanici"}
+              href={"/disKullanici"}
             >
               <FaUsersBetweenLines className="h-6 w-6" />
               <span
@@ -261,9 +259,12 @@ const Dashboard = () => {
             </div>
           </div>
 
-          <button className="p-3 rounded-xl hover:bg-blue-400 hover:text-white ">
+          <Link
+            className="p-3 rounded-xl hover:bg-blue-400 hover:text-white "
+            href={"/login"}
+          >
             <MdLogout className="h-6 w-6" />
-          </button>
+          </Link>
         </div>
       </aside>
     </div>
