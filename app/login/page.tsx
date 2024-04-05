@@ -51,7 +51,7 @@ const LoginPage = () => {
       authCode: data.verificationCode,
     };
     if (step === 0) {
-      loginObject.getMobileAuthCode(params, {});
+      loginObject.getMobileAuthCode(params);
       setStep(1);
 
       // validation code sended
