@@ -5,10 +5,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import Login from "../Models/Login";
-import { API } from "../api/service";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const [step, setStep] = useState(0);
+  const router = useRouter();
   const loginObject = new Login();
   // const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
   //   event.preventDefault();
@@ -56,10 +57,13 @@ const LoginPage = () => {
 
       // validation code sended
     } else {
-      loginObject.getLoginInfo(loginParams);
-
-      // login with verification code
-      // router.push("/home");
+      const [response, error] = await loginObject.getLoginInfo(loginParams);
+      if (response.data !== null) {
+        console.log("istek başarılı");
+        router.push("/home");
+      } else {
+        console.error("başarısız", error);
+      }
     }
   };
 

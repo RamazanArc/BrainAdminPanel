@@ -4,10 +4,10 @@ export default class Login {
   // getMobileAuthCode(requestParams: any, requestHeaders: any) {
   //   return API.post("/login", requestParams, requestHeaders);
   // }
-  getLoginInfo(requestParams: any) {
-    return API.get("/Login", requestParams);
+  getLoginInfo(body: any) {
+    return API.get("/Login", body);
   }
   getMobileAuthCode(body: any) {
-    return API.postByParams("/Login/GetMobileAuthCode", body);
+    return API.post("/Login/GetMobileAuthCode", body);
   }
 }
